@@ -1,0 +1,21 @@
+{
+  "name": "bank-transaction-cdc",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "${PG_HOST}",
+    "database.port": "${PG_PORT}",
+    "database.user": "${PG_USER}",
+    "database.password": "${PG_PASS}",
+    "database.dbname": "${PG_DB}",
+    "database.server.name": "bank",
+    "schema.include.list": "public",
+    "table.include.list": "transaction",
+    "plugin.name": "pgoutput",
+    "slot.name": "bank_transaction_slot",
+    "publication.autocreate.mode": "filtered",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}

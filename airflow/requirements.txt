@@ -1,0 +1,8 @@
+psycopg2-binary
+clickhouse-driver
+kafka-python
+requests
+pendulum
+dbt-core
+dbt-postgres
+dbt-clickhouse
