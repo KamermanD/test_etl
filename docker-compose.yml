@@ -1,8 +1,7 @@
-version: '3.8'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.4.1
+    image: confluentinc/cp-zookeeper:7.6.1
     container_name: zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -24,7 +23,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   clickhouse:
-    image: yandex/clickhouse-server:23.8
+    image: clickhouse/clickhouse-server:24.8
     container_name: clickhouse
     ports:
       - "9000:9000"
@@ -33,7 +32,7 @@ services:
       - ./clickhouse/init:/docker-entrypoint-initdb.d
 
   debezium:
-    image: debezium/connect:2.2
+    image: debezium/connect:2.7.0.Final
     container_name: debezium
     depends_on:
       - kafka
@@ -52,6 +51,45 @@ services:
       - ./debezium/connectors:/connectors
       - ./debezium/scripts/init_connectors.sh:/docker-entrypoint-initdb.d/init_connectors.sh
 
+  # airflow:
+  #   build:
+  #     context: ./airflow
+  #     dockerfile: Dockerfile
+  #   container_name: airflow
+  #   depends_on:
+  #     - clickhouse
+  #     - kafka
+  #     - debezium
+  #   environment:
+  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+  #     - AIRFLOW__CORE__LOAD_EXAMPLES=False
+  #     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:///airflow.db
+  #     - PG_HOST=${PG_HOST}
+  #     - PG_PORT=${PG_PORT}
+  #     - PG_DB=${PG_DB}
+  #     - PG_USER=${PG_USER}
+  #     - PG_PASS=${PG_PASS}
+  #     - CH_HOST=${CH_HOST}
+  #     - CH_PORT=${CH_PORT}
+  #     - CH_USER=${CH_USER}
+  #     - CH_PASS=${CH_PASS}
+  #     - CH_DB=${CH_DB}
+  #     - DEBEZIUM_URL=${DEBEZIUM_URL}
+  #     - KAFKA_BROKER=${KAFKA_BROKER}
+  #     - CDC_CONSUMER_GROUP=${CDC_CONSUMER_GROUP}
+  #   ports:
+  #     - "8080:8080"
+  #   command: >
+  #     bash -c "airflow db init &&
+  #              airflow users create --username admin --firstname Air --lastname Flow --role Admin --email admin@example.com --password admin &&
+  #              airflow webserver & airflow scheduler"
+  #   volumes:
+  #     - ./airflow/dags:/opt/airflow/dags
+  #     - ./dbt:/opt/airflow/dbt
+  #     - ./clickhouse/init:/docker-entrypoint-initdb.d
+
+
+
   airflow:
     build:
       context: ./airflow
@@ -62,31 +100,44 @@ services:
       - kafka
       - debezium
     environment:
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:///airflow.db
-      - PG_HOST=${PG_HOST}
-      - PG_PORT=${PG_PORT}
-      - PG_DB=${PG_DB}
-      - PG_USER=${PG_USER}
-      - PG_PASS=${PG_PASS}
-      - CH_HOST=${CH_HOST}
-      - CH_PORT=${CH_PORT}
-      - CH_USER=${CH_USER}
-      - CH_PASS=${CH_PASS}
-      - CH_DB=${CH_DB}
-      - DEBEZIUM_URL=${DEBEZIUM_URL}
-      - KAFKA_BROKER=${KAFKA_BROKER}
-      - CDC_CONSUMER_GROUP=${CDC_CONSUMER_GROUP}
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      # AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${PG_USER}:${PG_PASS}@${PG_HOST}:${PG_PORT}/${PG_DB}?sslmode=require
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: "postgresql+psycopg2://${PG_USER}:${PG_PASS}@${PG_HOST}:${PG_PORT}/${PG_DB}?sslmode=verify-full&sslrootcert=/opt/airflow/.postgresql/root.crt"
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      # AIRFLOW__WEBSERVER__RBAC: "True"
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASS: ${PG_PASS}
+      CH_HOST: ${CH_HOST}
+      CH_PORT: ${CH_PORT}
+      CH_USER: ${CH_USER}
+      CH_PASS: ${CH_PASS}
+      CH_DB: ${CH_DB}
+      DEBEZIUM_URL: ${DEBEZIUM_URL}
+      KAFKA_BROKER: ${KAFKA_BROKER}
+      CDC_CONSUMER_GROUP: ${CDC_CONSUMER_GROUP}
     ports:
       - "8080:8080"
-    command: >
-      bash -c "airflow db init &&
-               airflow users create --username admin --firstname Air --lastname Flow --role Admin --email admin@example.com --password admin &&
-               airflow webserver & airflow scheduler"
     volumes:
+      - ./postgres-certs:/opt/airflow/.postgresql
       - ./airflow/dags:/opt/airflow/dags
       - ./dbt:/opt/airflow/dbt
-      - ./clickhouse/init:/docker-entrypoint-initdb.d
+    command: >
+      bash -c "
+      airflow db migrate &&
+      airflow users create
+        --username admin
+        --firstname Air
+        --lastname Flow
+        --role Admin
+        --email admin@example.com
+        --password admin || true &&
+      exec airflow webserver --port 8080 --host 0.0.0.0"
+
+
+
+
 
 

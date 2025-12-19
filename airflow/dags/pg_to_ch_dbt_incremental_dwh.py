@@ -1,8 +1,10 @@
+import os
 import pendulum
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 import psycopg2
+from psycopg2.extras import DictCursor
 from clickhouse_driver import Client as CHClient
 
 import os
@@ -15,13 +17,27 @@ PG_DB   = os.getenv("PG_DB", "bank_src")
 PG_USER = os.getenv("PG_USER", "bank")
 PG_PASS = os.getenv("PG_PASS", "bank")
 
+PG_CERT = os.getenv("PG_CERT", r"C:\Users\rubin\.postgresql\root.crt")
+
 CH_HOST = os.getenv("CH_HOST", "clickhouse")
 CH_PORT = int(os.getenv("CH_PORT", "9000"))
 CH_USER = os.getenv("CH_USER", "airflow")
 CH_PASS = os.getenv("CH_PASS", "airflow")
 
 def pg_conn():
-    return psycopg2.connect(host=PG_HOST, port=PG_PORT, dbname=PG_DB, user=PG_USER, password=PG_PASS)
+    return psycopg2.connect(
+        host=PG_HOST,
+        port=PG_PORT,
+        dbname=PG_DB,
+        user=PG_USER,
+        password=PG_PASS,
+        sslmode="verify-full",
+        sslrootcert=PG_CERT,
+        target_session_attrs="read-write"
+    )
+
+# def pg_conn():
+#     return psycopg2.connect(host=PG_HOST, port=PG_PORT, dbname=PG_DB, user=PG_USER, password=PG_PASS)
 
 def ch_client():
     return CHClient(host=CH_HOST, port=CH_PORT, user=CH_USER, password=CH_PASS, database="bank_dwh")

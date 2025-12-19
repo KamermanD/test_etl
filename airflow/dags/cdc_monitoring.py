@@ -1,9 +1,12 @@
-import os, json, requests
+import os
+import json
+import pendulum
+import requests
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from clickhouse_driver import Client as CHClient
-import pendulum
 from kafka import KafkaConsumer, TopicPartition
+import psycopg2
 
 KAFKA_BOOTSTRAP = os.getenv("KAFKA_BROKER", "kafka:9092")
 GROUP_ID = os.getenv("CDC_CONSUMER_GROUP", "ch_cdc_v1")
@@ -16,8 +19,27 @@ CH_PORT = int(os.getenv("CH_PORT", "9000"))
 CH_USER = os.getenv("CH_USER", "airflow")
 CH_PASS = os.getenv("CH_PASS", "airflow")
 
+PG_HOST = os.getenv("PG_HOST", "rc1b-o3ezvcgz5072sgar.mdb.yandexcloud.net")
+PG_PORT = int(os.getenv("PG_PORT", "6432"))
+PG_DB   = os.getenv("PG_DB", "db")
+PG_USER = os.getenv("PG_USER", "bank_ro")
+PG_PASS = os.getenv("PG_PASS", "hsepassword!")
+PG_CERT = os.getenv("PG_CERT", r"C:\Users\rubin\.postgresql\root.crt")
+
 def ch():
     return CHClient(host=CH_HOST, port=CH_PORT, user=CH_USER, password=CH_PASS, database="bank_dwh")
+
+def pg_conn():
+    return psycopg2.connect(
+        host=PG_HOST,
+        port=PG_PORT,
+        dbname=PG_DB,
+        user=PG_USER,
+        password=PG_PASS,
+        sslmode="verify-full",
+        sslrootcert=PG_CERT,
+        target_session_attrs="read-write"
+    )
 
 def check_debezium():
     c = ch()

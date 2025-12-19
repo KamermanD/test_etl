@@ -1,0 +1,230 @@
+[0m14:08:28.196433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee0c2ff10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee0d0e3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee0c2de90>]}
+
+
+============================== 14:08:28.225716 | b833c187-24c5-4e0d-a21a-99fb68b7c660 ==============================
+[0m14:08:28.225716 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:08:28.227194 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'warn_error': 'None', 'static_parser': 'True', 'write_json': 'True', 'no_print': 'None', 'partial_parse': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/opt/airflow/dbt', 'target_path': 'None', 'log_cache_events': 'False', 'log_path': '/opt/airflow/dbt/logs', 'use_colors': 'True', 'printer_width': '80', 'version_check': 'True', 'introspect': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'debug': 'False'}
+[0m14:08:28.343150 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:08:28.346125 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.39587888, "process_in_blocks": "38568", "process_kernel_time": 1.76084, "process_mem_max_rss": "99896", "process_out_blocks": "1232", "process_user_time": 2.116203}
+[0m14:08:28.347757 [debug] [MainThread]: Command `dbt run` failed at 14:08:28.347613 after 0.40 seconds
+[0m14:08:28.348529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee0e1fd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee4e78310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbee0e14310>]}
+[0m14:08:28.349655 [debug] [MainThread]: Flushing usage events
+[0m14:08:29.640232 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:08:35.863602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2d62dabd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2d62d9e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2d62daf90>]}
+
+
+============================== 14:08:35.872002 | 9b341fc4-4b04-40c3-9069-5edad7f513f5 ==============================
+[0m14:08:35.872002 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:08:35.874674 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'quiet': 'False', 'use_colors': 'True', 'no_print': 'None', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'warn_error': 'None', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt/logs', 'write_json': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'profiles_dir': '/opt/airflow/dbt', 'debug': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False'}
+[0m14:08:35.935586 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:08:35.937828 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.174549, "process_in_blocks": "0", "process_kernel_time": 0.307883, "process_mem_max_rss": "100420", "process_out_blocks": "0", "process_user_time": 1.823308}
+[0m14:08:35.939063 [debug] [MainThread]: Command `dbt run` failed at 14:08:35.938927 after 0.18 seconds
+[0m14:08:35.940358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2da49c2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2da49c1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ea2d6370690>]}
+[0m14:08:35.941463 [debug] [MainThread]: Flushing usage events
+[0m14:08:36.835351 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:10:12.862376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dca967c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dcadf7dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dcab5f810>]}
+
+
+============================== 14:10:12.889161 | 0c9ca7c9-9300-4f6d-8559-0664969ec503 ==============================
+[0m14:10:12.889161 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:10:12.891312 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'static_parser': 'True', 'version_check': 'True', 'no_print': 'None', 'use_colors': 'True', 'profiles_dir': '/opt/airflow/dbt', 'indirect_selection': 'eager', 'quiet': 'False', 'warn_error': 'None', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'log_path': '/opt/airflow/dbt/logs', 'cache_selected_only': 'False', 'fail_fast': 'False', 'introspect': 'True', 'debug': 'False', 'log_format': 'default', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+[0m14:10:12.963147 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:10:12.966467 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.55359596, "process_in_blocks": "0", "process_kernel_time": 1.010843, "process_mem_max_rss": "99888", "process_out_blocks": "0", "process_user_time": 2.553077}
+[0m14:10:12.968603 [debug] [MainThread]: Command `dbt run` failed at 14:10:12.968470 after 0.56 seconds
+[0m14:10:12.970436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dca9cbb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dca9cbc90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x756dca9ff510>]}
+[0m14:10:12.972398 [debug] [MainThread]: Flushing usage events
+[0m14:10:13.952181 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:20:19.872836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c2e1aa890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c2e1a9e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c2e1aaf90>]}
+
+
+============================== 14:20:19.913080 | ad4cd6bd-385e-4aaf-863c-d0dfaa2e42d9 ==============================
+[0m14:20:19.913080 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:20:19.915488 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'empty': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'log_path': '/opt/airflow/dbt/logs', 'partial_parse': 'True', 'profiles_dir': '/opt/airflow/dbt', 'use_colors': 'True', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'fail_fast': 'False', 'version_check': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'quiet': 'False', 'no_print': 'None', 'warn_error': 'None', 'introspect': 'True', 'static_parser': 'True', 'write_json': 'True'}
+[0m14:20:20.057307 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:20:20.061088 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.6289085, "process_in_blocks": "0", "process_kernel_time": 1.44795, "process_mem_max_rss": "100176", "process_out_blocks": "0", "process_user_time": 2.165942}
+[0m14:20:20.062821 [debug] [MainThread]: Command `dbt run` failed at 14:20:20.062593 after 0.63 seconds
+[0m14:20:20.064301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c2e1ddc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c32404310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713c324042d0>]}
+[0m14:20:20.065799 [debug] [MainThread]: Flushing usage events
+[0m14:20:21.091037 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:40:17.222749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3ccd2bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3ccd2c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3cdc1890>]}
+
+
+============================== 14:40:17.239802 | 1147c7a7-da04-4f5a-8c1a-f99aa2e2ee45 ==============================
+[0m14:40:17.239802 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:40:17.241941 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'profiles_dir': '/opt/airflow/dbt', 'log_format': 'default', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'printer_width': '80', 'use_colors': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'warn_error': 'None', 'target_path': 'None', 'log_path': '/opt/airflow/dbt/logs', 'version_check': 'True', 'debug': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True'}
+[0m14:40:17.331824 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:40:17.336418 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.6585981, "process_in_blocks": "40856", "process_kernel_time": 1.478242, "process_mem_max_rss": "99556", "process_out_blocks": "1232", "process_user_time": 2.059976}
+[0m14:40:17.338709 [debug] [MainThread]: Command `dbt run` failed at 14:40:17.338537 after 0.66 seconds
+[0m14:40:17.340595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3d90f710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3cb3eb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77cc3cb35f50>]}
+[0m14:40:17.355378 [debug] [MainThread]: Flushing usage events
+[0m14:40:18.862624 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:40:26.618315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d98f6e5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d9916b810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d9916b890>]}
+
+
+============================== 14:40:26.628808 | 81e5e3eb-9f9a-41fc-968f-5d056d79592a ==============================
+[0m14:40:26.628808 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:40:26.630844 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'target_path': 'None', 'no_print': 'None', 'fail_fast': 'False', 'debug': 'False', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'warn_error': 'None', 'version_check': 'True', 'introspect': 'True', 'log_format': 'default', 'log_cache_events': 'False', 'printer_width': '80', 'use_colors': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'quiet': 'False', 'log_path': '/opt/airflow/dbt/logs', 'use_experimental_parser': 'False', 'static_parser': 'True', 'write_json': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False'}
+[0m14:40:26.696358 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:40:26.700290 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.19162618, "process_in_blocks": "0", "process_kernel_time": 0.452662, "process_mem_max_rss": "100388", "process_out_blocks": "0", "process_user_time": 2.247289}
+[0m14:40:26.701914 [debug] [MainThread]: Command `dbt run` failed at 14:40:26.701775 after 0.19 seconds
+[0m14:40:26.703476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d98fa08d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d9d0f0310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703d98e45310>]}
+[0m14:40:26.704731 [debug] [MainThread]: Flushing usage events
+[0m14:40:27.570013 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:41:04.515800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa291cf450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa293cb5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa293cbb50>]}
+
+
+============================== 14:41:04.552385 | d8cf6212-0784-4579-94b4-2b6d895aa163 ==============================
+[0m14:41:04.552385 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:41:04.555036 [debug] [MainThread]: running dbt with arguments {'log_path': '/opt/airflow/dbt/logs', 'cache_selected_only': 'False', 'fail_fast': 'False', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'log_format': 'default', 'debug': 'False', 'write_json': 'True', 'printer_width': '80', 'partial_parse': 'True', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'version_check': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '/opt/airflow/dbt', 'indirect_selection': 'eager'}
+[0m14:41:04.689551 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "bank_dwh_profile", target "dev" invalid: '9000' is not valid under any of the given schemas
+[0m14:41:04.694581 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.40799838, "process_in_blocks": "0", "process_kernel_time": 0.861452, "process_mem_max_rss": "100192", "process_out_blocks": "0", "process_user_time": 2.448128}
+[0m14:41:04.697146 [debug] [MainThread]: Command `dbt run` failed at 14:41:04.696924 after 0.41 seconds
+[0m14:41:04.699097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa2903b7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa29e0f2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dfa2d28fc90>]}
+[0m14:41:04.701374 [debug] [MainThread]: Flushing usage events
+[0m14:41:05.945644 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:50:11.561275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b451011f050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4510161650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4510160c90>]}
+
+
+============================== 14:50:13.541488 | 43e502a9-0706-4fe2-aa1d-4831145a5508 ==============================
+[0m14:50:13.541488 [info ] [MainThread]: Running with dbt=1.10.16
+[0m14:50:13.546320 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'log_format': 'default', 'partial_parse': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'indirect_selection': 'eager', 'introspect': 'True', 'fail_fast': 'False', 'quiet': 'False', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'profiles_dir': '/opt/airflow/dbt', 'empty': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'target_path': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'use_colors': 'True', 'version_check': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'write_json': 'True'}
+[0m14:50:13.672667 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m14:50:13.674809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '43e502a9-0706-4fe2-aa1d-4831145a5508', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b45101b4450>]}
+[0m14:50:13.985597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '43e502a9-0706-4fe2-aa1d-4831145a5508', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b451013f910>]}
+[0m14:50:14.041596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '43e502a9-0706-4fe2-aa1d-4831145a5508', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b45107a0790>]}
+[0m14:50:14.046483 [info ] [MainThread]: Registered adapter: clickhouse=1.9.7
+[0m14:50:14.159834 [debug] [MainThread]: checksum: c4b99e2e3bb042c661c8397fd92290cd0d52b31ce393ad721fa0bb3c9591dd0f, vars: {}, profile: , target: , version: 1.10.16
+[0m14:50:14.163116 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:50:14.176877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '43e502a9-0706-4fe2-aa1d-4831145a5508', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b451017bd10>]}
+[0m14:50:15.620636 [error] [MainThread]: Encountered an error:
+Compilation Error in model ods_dim_account_scd2 (models/ods/ods_dim_account_scd2.sql)
+  Encountered unknown tag 'snapshot'.
+    line 3
+      {% snapshot ods_dim_account_scd2 %}
+[0m14:50:15.622877 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m14:50:15.625475 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.1675205, "process_in_blocks": "18864", "process_kernel_time": 1.250317, "process_mem_max_rss": "108524", "process_out_blocks": "0", "process_user_time": 2.87573}
+[0m14:50:15.628142 [debug] [MainThread]: Command `dbt run` failed at 14:50:15.627908 after 4.17 seconds
+[0m14:50:15.629997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b4510183e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b45101822d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b450fbdd7d0>]}
+[0m14:50:15.632134 [debug] [MainThread]: Flushing usage events
+[0m14:50:16.625984 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:24:46.105200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a9bafd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a9ba690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a9bb010>]}
+
+
+============================== 16:24:46.440533 | d3bec0fb-d3be-41d0-a51f-5cedf97db89c ==============================
+[0m16:24:46.440533 [info ] [MainThread]: Running with dbt=1.10.16
+[0m16:24:46.442595 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'quiet': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'fail_fast': 'False', 'target_path': 'None', 'no_print': 'None', 'use_experimental_parser': 'False', 'log_path': '/opt/airflow/dbt/logs', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'empty': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt', 'log_cache_events': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m16:24:46.555921 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m16:24:46.557475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd3bec0fb-d3be-41d0-a51f-5cedf97db89c', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a8e8dd0>]}
+[0m16:24:46.772550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd3bec0fb-d3be-41d0-a51f-5cedf97db89c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831b929810>]}
+[0m16:24:46.844568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd3bec0fb-d3be-41d0-a51f-5cedf97db89c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831b044990>]}
+[0m16:24:46.864221 [info ] [MainThread]: Registered adapter: clickhouse=1.9.7
+[0m16:24:46.978426 [debug] [MainThread]: checksum: c4b99e2e3bb042c661c8397fd92290cd0d52b31ce393ad721fa0bb3c9591dd0f, vars: {}, profile: , target: , version: 1.10.16
+[0m16:24:46.982500 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:24:46.983634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd3bec0fb-d3be-41d0-a51f-5cedf97db89c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831aa24350>]}
+[0m16:24:48.463822 [error] [MainThread]: Encountered an error:
+Compilation Error in model ods_dim_account_scd2 (models/ods/ods_dim_account_scd2.sql)
+  Encountered unknown tag 'snapshot'.
+    line 3
+      {% snapshot ods_dim_account_scd2 %}
+[0m16:24:48.465770 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:24:48.468545 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.452097, "process_in_blocks": "35608", "process_kernel_time": 1.656149, "process_mem_max_rss": "108516", "process_out_blocks": "0", "process_user_time": 3.420048}
+[0m16:24:48.470754 [debug] [MainThread]: Command `dbt run` failed at 16:24:48.470479 after 2.45 seconds
+[0m16:24:48.472233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a674810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831a4f3f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f831aa7af10>]}
+[0m16:24:48.473587 [debug] [MainThread]: Flushing usage events
+[0m16:24:49.584156 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:25:34.494314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16163fcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16182f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf161b27650>]}
+
+
+============================== 16:25:34.509088 | 6f7e9b9d-1be8-43d7-a91a-472873ed729d ==============================
+[0m16:25:34.509088 [info ] [MainThread]: Running with dbt=1.10.16
+[0m16:25:34.510567 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': '/opt/airflow/dbt/logs', 'static_parser': 'True', 'fail_fast': 'False', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'printer_width': '80', 'introspect': 'True', 'empty': 'False', 'no_print': 'None', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'version_check': 'True'}
+[0m16:25:34.627618 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m16:25:34.629118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6f7e9b9d-1be8-43d7-a91a-472873ed729d', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16149a090>]}
+[0m16:25:34.816921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6f7e9b9d-1be8-43d7-a91a-472873ed729d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16163d710>]}
+[0m16:25:34.890253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6f7e9b9d-1be8-43d7-a91a-472873ed729d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf161ad8610>]}
+[0m16:25:34.898082 [info ] [MainThread]: Registered adapter: clickhouse=1.9.7
+[0m16:25:35.008045 [debug] [MainThread]: checksum: c4b99e2e3bb042c661c8397fd92290cd0d52b31ce393ad721fa0bb3c9591dd0f, vars: {}, profile: , target: , version: 1.10.16
+[0m16:25:35.012781 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:25:35.014211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6f7e9b9d-1be8-43d7-a91a-472873ed729d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16163d210>]}
+[0m16:25:36.381305 [error] [MainThread]: Encountered an error:
+Compilation Error in model ods_dim_account_scd2 (models/ods/ods_dim_account_scd2.sql)
+  Encountered unknown tag 'snapshot'.
+    line 3
+      {% snapshot ods_dim_account_scd2 %}
+[0m16:25:36.383549 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:25:36.386034 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.0017402, "process_in_blocks": "0", "process_kernel_time": 2.057021, "process_mem_max_rss": "108736", "process_out_blocks": "0", "process_user_time": 3.440398}
+[0m16:25:36.388090 [debug] [MainThread]: Command `dbt run` failed at 16:25:36.387906 after 2.00 seconds
+[0m16:25:36.390242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16149b710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf1622772d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cf16117da90>]}
+[0m16:25:36.392197 [debug] [MainThread]: Flushing usage events
+[0m16:25:37.390866 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:30:25.355239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f23210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f87b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f22e90>]}
+
+
+============================== 16:30:25.453966 | 5e9dc1bc-2b2b-4d06-9434-b2439acf0be3 ==============================
+[0m16:30:25.453966 [info ] [MainThread]: Running with dbt=1.10.16
+[0m16:30:25.455948 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'use_colors': 'True', 'log_path': '/opt/airflow/dbt/logs', 'cache_selected_only': 'False', 'empty': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --select raw_transaction_cdc ods_dim_card_scd2 ods_fact_transaction', 'fail_fast': 'False', 'log_format': 'default', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt', 'quiet': 'False', 'warn_error': 'None', 'no_print': 'None', 'printer_width': '80', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'write_json': 'True', 'use_experimental_parser': 'False'}
+[0m16:30:25.630679 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m16:30:25.632948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5e9dc1bc-2b2b-4d06-9434-b2439acf0be3', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f2b210>]}
+[0m16:30:25.910205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5e9dc1bc-2b2b-4d06-9434-b2439acf0be3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a813fbe90>]}
+[0m16:30:26.017642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5e9dc1bc-2b2b-4d06-9434-b2439acf0be3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a815ac690>]}
+[0m16:30:26.020668 [info ] [MainThread]: Registered adapter: clickhouse=1.9.7
+[0m16:30:26.158106 [debug] [MainThread]: checksum: c4b99e2e3bb042c661c8397fd92290cd0d52b31ce393ad721fa0bb3c9591dd0f, vars: {}, profile: , target: , version: 1.10.16
+[0m16:30:26.164396 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:30:26.166116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5e9dc1bc-2b2b-4d06-9434-b2439acf0be3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f8c610>]}
+[0m16:30:28.311387 [error] [MainThread]: Encountered an error:
+Compilation Error in model ods_dim_account_scd2 (models/ods/ods_dim_account_scd2.sql)
+  Encountered unknown tag 'snapshot'.
+    line 3
+      {% snapshot ods_dim_account_scd2 %}
+[0m16:30:28.314145 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:30:28.319631 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.1104748, "process_in_blocks": "0", "process_kernel_time": 2.407492, "process_mem_max_rss": "108696", "process_out_blocks": "0", "process_user_time": 5.320557}
+[0m16:30:28.321480 [debug] [MainThread]: Command `dbt run` failed at 16:30:28.321257 after 3.11 seconds
+[0m16:30:28.322955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f5ded0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80f8fcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a1a80b1f490>]}
+[0m16:30:28.324707 [debug] [MainThread]: Flushing usage events
+[0m16:30:30.368433 [debug] [MainThread]: An error was encountered while trying to flush usage events
